@@ -1,6 +1,5 @@
 let express = require('express');
 let app = express();
-
 let path = require('path');
 
 app.set('port', 3000);

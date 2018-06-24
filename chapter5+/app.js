@@ -2,6 +2,8 @@ let express = require('express');
 let app = express();
 let path = require('path');
 
+let routes = require('./routes');
+
 app.set('port', 3000);
 
 app.use((req, res, next) => {
@@ -10,6 +12,8 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/api', routes);
 
 app.get('/json', (req, res) => {
   console.log('Get the json');
